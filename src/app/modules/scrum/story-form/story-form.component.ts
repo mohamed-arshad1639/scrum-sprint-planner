@@ -23,7 +23,7 @@ export class StoryFormComponent implements OnInit {
 
   onSubmit(): void {
 
-    debugger
+    // debugger
 
     if (this.storyForm.valid) {
       const { name, points, description } = this.storyForm.value;

@@ -41,7 +41,7 @@ export class StoryService {
 
     // Add the new story to the list
     this.storiesSubject.next([...currentStories, story]);
-    console.log('storiesSubject', this.storiesSubject);
+    // console.log('storiesSubject', this.storiesSubject);
     return true; // Successfully added
   }
 
