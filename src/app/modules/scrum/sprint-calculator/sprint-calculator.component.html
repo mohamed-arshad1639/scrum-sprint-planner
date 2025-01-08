@@ -1,0 +1,71 @@
+<mat-card class="sprint-calculator-card">
+  <mat-card-title>Sprint Calculator</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="sprintForm" (ngSubmit)="onGenerateSprint()">
+      <div class="form-container">
+        <!-- Sprint Name Field -->
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Sprint Name</mat-label>
+          <input matInput formControlName="sprintName" />
+          <mat-error
+            *ngIf="
+              sprintForm.controls['sprintName'].invalid &&
+              sprintForm.controls['sprintName'].touched
+            "
+          >
+            Sprint name is required.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Sprint Capacity Field -->
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Sprint Capacity (Points)</mat-label>
+          <input matInput formControlName="capacity" type="number" />
+          <mat-error
+            *ngIf="
+              sprintForm.controls['capacity'].invalid &&
+              sprintForm.controls['capacity'].touched
+            "
+          >
+            Capacity must be a positive number.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Buttons -->
+        <div class="button-container">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="sprintForm.invalid || !storiesAvailable"
+          >
+            Generate Sprint
+          </button>
+          <button
+            mat-raised-button
+            color="accent"
+            type="button"
+            (click)="clearSelectedStories()"
+            [disabled]="!selectedStoriesAvailable"
+          >
+            Clear Selected Stories
+          </button>
+        </div>
+      </div>
+
+      <!-- No stories message -->
+      <div *ngIf="!storiesAvailable" class="no-stories-message">
+        <mat-error
+          >No stories available to generate a sprint. Please add some stories
+          first.</mat-error
+        >
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<app-auto-selected-sprint
+  [sprintCapacity]="sprintCapacity"
+  [sprintName]="sprintName"
+>
+</app-auto-selected-sprint>

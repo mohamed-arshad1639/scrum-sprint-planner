@@ -1,0 +1,42 @@
+
+  
+  .story-form-card {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-wrap: wrap;  /* Allows elements to wrap when there is insufficient space */
+    gap: 20px;        /* Space between elements */
+  }
+  
+  .form-item {
+    flex: 1 1 200px;  /* Flex grow/shrink and base width for each field */
+  }
+  
+  .description-field {
+    flex: 2 1 400px;  /* More space for the description field */
+  }
+  .submit-button{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+ 
+  
+  textarea {
+    width: 100%;
+    max-height: 30px;
+  }
+
+  mat-card-content {
+    padding: 16px;
+  }
+  mat-card-title{
+    padding: 0px 16px;
+  }
+  

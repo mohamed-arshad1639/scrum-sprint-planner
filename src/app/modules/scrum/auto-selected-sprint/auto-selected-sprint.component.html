@@ -1,0 +1,25 @@
+<mat-card class="auto-selected-card">
+    <mat-card-title class="header">
+        <span>{{ sprintName || 'Auto-Selected Sprint' }}</span>
+        <span *ngIf="sprintCapacity" class="sprint-capacity">Sprint Capacity: {{ sprintCapacity }} Points</span>
+      </mat-card-title>
+    <mat-card-content>
+      <div *ngIf="selectedStories.length === 0" class="no-stories-message">
+        <p>No stories selected for this sprint.</p>
+      </div>
+      <div class="selected-stories-container">
+        <div *ngFor="let story of selectedStories" class="selected-story-card">
+          <mat-card>
+            <mat-card-title>{{ story.name }}</mat-card-title>
+            <mat-card-content>
+              <p><strong>Points:</strong> {{ story.points }}</p>
+              <p>{{ story.description }}</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+  
+  

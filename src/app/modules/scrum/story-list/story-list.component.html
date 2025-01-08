@@ -1,0 +1,34 @@
+<mat-card class="story-form-card">
+    <mat-card-title>
+      <div class="title-container">
+        <span>View Stories</span>
+        <div class="delete-all-container" *ngIf="stories.length > 0">
+          <button mat-raised-button color="warn" (click)="deleteAllStories()">
+            Delete All Stories
+          </button>
+        </div>
+      </div>
+    </mat-card-title>
+  
+    <div *ngIf="stories.length === 0" class="no-stories-message">
+      <p>No stories added yet.</p>
+    </div>
+  
+    <!-- Story List -->
+    <div class="story-list-container">
+      <div *ngFor="let story of stories" class="story-card">
+        <mat-card class="story-list-card">
+          <mat-card-title>
+            <div class="story-header">
+              <span class="story-name">{{ story.name }}</span>
+              <span class="story-points">({{ story.points }} Points)</span>
+            </div>
+          </mat-card-title>
+          <mat-card-content>
+            <p class="story-description">{{ story.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+  

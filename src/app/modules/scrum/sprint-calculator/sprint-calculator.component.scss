@@ -1,0 +1,35 @@
+.sprint-calculator-card {
+    margin: 20px 0;
+    padding: 20px;
+  }
+  
+  .form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .form-field {
+    margin-right: 10px;
+    flex: 1;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  mat-form-field {
+    flex: 1;
+  }
+  
+  button {
+    min-width: 150px;
+  }
+  
+  .no-stories-message {
+    margin-top: 10px;
+    color: red;
+    font-size: 14px;
+  }
+  

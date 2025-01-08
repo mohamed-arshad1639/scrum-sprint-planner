@@ -1,0 +1,100 @@
+/* Style for the 'No Stories' message */
+.no-stories-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: gray;
+    margin: 20px 0;
+  }
+  
+  /* Story List Container for horizontal layout */
+  .story-list-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
+    gap: 20px; /* Add spacing between cards */
+    justify-content: flex-start; /* Align cards to the left */
+    padding: 20px; /* Add padding around the container */
+    
+  }
+  
+  /* Individual story card */
+  .story-card {
+    flex: 1 1 calc(33.333% - 20px); /* 3 cards per row: Each card takes 1/3 of the row minus gap space */
+    max-width: 400px; /* Maximum width for each card */
+    // max-height: 350px; /* Ideal max height for cards */
+
+    box-sizing: border-box;
+  }
+  
+  /* Card title styling */
+  .story-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+  }
+  
+  .story-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    overflow: hidden; /* Prevent overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for truncated text */
+    white-space: nowrap; /* Ensure truncation happens on a single line */
+    max-width: 70%; /* Limit the width to allow space for story-points */
+  }
+  
+  .story-points {
+    font-size: 1rem;
+    color: #666; /* Subtle color for points */
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+  /* Description text */
+  .story-description {
+    font-size: 1rem;
+    margin-top: 10px;
+    overflow: hidden; /* Prevent overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for truncated text */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    // min-height: 100px;
+  }
+
+  mat-card-content {
+    padding: 16px;
+  }
+  mat-card-title{
+    padding: 0px 16px;
+  }
+
+
+  .title-container {
+    display: flex;
+    justify-content: space-between; /* Align title to the left and button to the right */
+    align-items: center; /* Vertically center items */
+    width: 100%;
+  }
+  
+  /* Adjust spacing for the delete button */
+  .delete-all-container {
+    margin-left: auto; /* Push the button to the far right */
+  }
+  
+  button[mat-raised-button] {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  
+  /* Responsive design: Adjust number of cards per row */
+  @media (max-width: 992px) {
+    .story-card {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row for tablets */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .story-card {
+      flex: 1 1 100%; /* 1 card per row for mobile devices */
+    }
+  }
+  
