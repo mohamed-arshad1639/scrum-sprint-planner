@@ -17,7 +17,7 @@ export class StoryFormComponent implements OnInit {
     this.storyForm = this.fb.group({
       name: ['', [Validators.required]], // Story Name (Required)
       points: [0, [Validators.required, Validators.min(1)]], // Story Points (Required, Positive)
-      description: ['', [Validators.required, Validators.minLength(10)]] // Description (Required, Min Length 10)
+      description: ['', [Validators.required, Validators.minLength(0)]] // Description (Required, Min Length 10)
     });
   }
 

@@ -9,7 +9,7 @@ import { StoryService, Story } from '../services/story.service';
 export class StoryListComponent {
   stories: Story[] = [];
 
-  constructor(private storyService: StoryService) {}
+  constructor(private storyService: StoryService,) {}
 
   ngOnInit(): void {
     this.storyService.stories$.subscribe((stories) => {
@@ -17,11 +17,6 @@ export class StoryListComponent {
     });
   }
 
-  deleteAllStories(): void {
-    const confirmed = confirm('Are you sure you want to delete all stories?');
-    if (confirmed) {
-      this.storyService.deleteAllStories();
-    }
-  }
+ 
 
 }
